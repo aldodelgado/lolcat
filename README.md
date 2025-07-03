@@ -1,3 +1,14 @@
+  ______________
+ ( 🔥 AI Jam 🚀 )
+  --------------
+         \   ^__^
+          \  (oo)\_______
+             (__)\       )\/\
+                 ||----w |
+                 ||     ||
+
+Forked from https://github.com/busyloop/lolcat
+
 # What?
 
 ![](https://github.com/busyloop/lolcat/raw/master/ass/nom.jpg)
