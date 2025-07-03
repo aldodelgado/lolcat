@@ -1,0 +1,5 @@
+openai>=1.6.1
+requests>=2.31.0
+llm-prompt-semantic-diff>=0.1.0
+pytest>=7.4.0
+flake8>=6.1.0

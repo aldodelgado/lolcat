@@ -1,0 +1,2 @@
+[tool.poetry.dependencies]
+llm-prompt-semantic-diff = "^0.1.0"
