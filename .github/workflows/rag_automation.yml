@@ -28,7 +28,7 @@ jobs:
             -e OPENAI_API_KEY \
             -e GITHUB_TOKEN \
             -e GITHUB_REPO \
-            rag-runner python change_applier.py
+            rag-runner change_applier.py
 
   review-pr:
     name: Review Pull Request
