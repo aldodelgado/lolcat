@@ -6,6 +6,7 @@ from issue_handler import get_latest_issue
 from prompt_context_builder import create_prompt_context
 
 openai.api_key = os.getenv("OPENAI_API_KEY")
+subprocess.run(["git", "config", "--global", "--add", "safe.directory", os.getcwd()], check=True)
 
 def generate_patch(issue_body, context):
     prompt = f"""You are an AI software engineer. Given the issue below and the current code context, generate a patch in unified diff format (.patch).
