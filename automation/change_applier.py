@@ -25,10 +25,24 @@ def generate_patch(issue_body, context):
     )
     return response.choices[0].message.content
 
+import re
+
+
+def _extract_patch_text(patch_response: str) -> str:
+    """Extract a unified diff from an LLM response."""
+    # Strip common fenced code blocks
+    fence_pattern = re.compile(r"```(?:patch|diff)?\n(.*?)```", re.DOTALL)
+    match = fence_pattern.search(patch_response)
+    if match:
+        return match.group(1).strip()
+    return patch_response.strip()
+
+
 def apply_patch(patch_content, repo_dir="."):
+    patch_text = _extract_patch_text(patch_content)
     patch_file = os.path.join(repo_dir, "temp.patch")
     with open(patch_file, "w") as f:
-        f.write(patch_content)
+        f.write(patch_text)
     subprocess.run(["git", "apply", patch_file], check=True)
 
 def semantic_check():
