@@ -28,7 +28,9 @@ jobs:
             -e OPENAI_API_KEY \
             -e GITHUB_TOKEN \
             -e GITHUB_REPO \
-            rag-runner change_applier.py
+            -v "$PWD":/workspace \
+            -w /workspace \
+            rag-runner /app/change_applier.py
 
   review-pr:
     name: Review Pull Request
