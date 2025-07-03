@@ -18,11 +18,11 @@ def generate_patch(issue_body, context):
 
 ### PATCH:
 """
-    response = openai.ChatCompletion.create(
+    response = openai.chat.completions.create(
         model="gpt-4",
         messages=[{"role": "user", "content": prompt}]
     )
-    return response["choices"][0]["message"]["content"]
+    return response.choices[0].message.content
 
 def apply_patch(patch_content, repo_dir="."):
     patch_file = os.path.join(repo_dir, "temp.patch")
