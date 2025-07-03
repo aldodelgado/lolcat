@@ -11,8 +11,6 @@ jobs:
   patch-and-validate:
     name: Generate & Apply Patch
     runs-on: ubuntu-latest
-    container:
-      image: python:3.11-slim
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
